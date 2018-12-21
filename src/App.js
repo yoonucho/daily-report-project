@@ -11,7 +11,7 @@ class App extends Component {
 	// Render : componentWillMount() -> render() -> componentDidMount()
 	// Update componentWillReceiveProps() -> shouldComponentUpdate() == true -> componentWillUpdate()-> render() -> componentDidMount()
 
-	state = {};
+	// state = {};
 
 	render() {
 		return <div>Hello!</div>;

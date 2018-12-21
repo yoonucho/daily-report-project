@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import DayScore from "./DayScore";
 
 class Day extends Component {
+	state = {};
 	render() {
-		return (
-			<div>
-				<p>text</p>
-			</div>
-		);
+		return <p>text</p>;
 	}
 }
 
