@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Intro from "./pages/Intro";
 import Day from "./pages/Day";
 import Calendar from "./pages/Calendar";
-import Search from "./pages/Search";
+import Report from "./pages/Report";
 import Setting from "./pages/Setting";
 import About from "./pages/About";
 import "./App.css";
@@ -23,9 +23,9 @@ class App extends Component {
 				<Fragment>
 					<Nav />
 					<Route exact path="/" component={Intro} />
-					<Route path="/day" component={Day} />
+					<Route path="/today" component={Day} />
 					<Route path="/calendar" component={Calendar} />
-					<Route path="/search" component={Search} />
+					<Route path="/report" component={Report} />
 					<Route path="/setting" component={Setting} />
 					<Route path="/about" component={About} />
 				</Fragment>

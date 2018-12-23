@@ -13,7 +13,7 @@ class Nav extends Component {
 				<nav className="nav">
 					<ul className="nav-list">
 						<li>
-							<Link to="/day">
+							<Link to="/today">
 								<MdHome />
 								<span>오늘</span>
 							</Link>
@@ -25,7 +25,7 @@ class Nav extends Component {
 							</Link>
 						</li>
 						<li>
-							<Link to="/search">
+							<Link to="/report">
 								<MdAssignment />
 								<span>기록</span>
 							</Link>
