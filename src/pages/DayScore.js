@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class DayScore extends Component {
 	render() {
-		return <div>Hello!</div>;
+		return <div>DayScore</div>;
 	}
 }
 
