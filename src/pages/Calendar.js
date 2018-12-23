@@ -1,10 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
-class Ca extends Component {
+class Calendar extends Component {
 	render() {
-		console.log("calendar");
-		return <div>Calendar</div>;
+		//console.log("calendar");
+		return (
+			<Fragment>
+				<div className="calendar">
+					<p>Calendar</p>
+				</div>
+			</Fragment>
+		);
 	}
 }
 
-export default Ca;
+export default Calendar;

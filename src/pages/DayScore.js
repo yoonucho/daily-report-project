@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class DayScore extends Component {
 	render() {
-		return <div>DayScore</div>;
+		return (
+			<div class="score">
+				<button>test</button>
+			</div>
+		);
 	}
 }
 
