@@ -1,8 +1,25 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
+// import {Moment} from "moment";
 
 class Intro extends Component {
 	render() {
-		return <p>Intro</p>;
+		return (
+			<Fragment>
+				<div className="intro">
+					<div className="intro-inner">
+						<h1>
+							Daily
+							<br />
+							Report
+						</h1>
+						<Link to="/today" className="button">
+							START
+						</Link>
+					</div>
+				</div>
+			</Fragment>
+		);
 	}
 }
 
