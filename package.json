@@ -1,0 +1,35 @@
+{
+	"name": "daily_report_project",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"axios": "^0.18.0",
+		"moment": "^2.23.0",
+		"node-sass": "^4.11.0",
+		"react": "^16.7.0",
+		"react-big-calendar": "^0.20.2",
+		"react-dom": "^16.7.0",
+		"react-icons": "^3.2.2",
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "2.1.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "airbnb"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"main": "index.js",
+	"repository": "https://github.com/yoonucho/daily-report-project.git",
+	"author": "yoonucho <yoonu78@naver.com>",
+	"license": "MIT"
+}
