@@ -32,11 +32,12 @@ $bg: #fff9db;
                     font-size: 1rem;
                     padding: 5px 0 0 0;
                 }
-            }
-            &.active {
+				&.active {
                 * {
                     color: $subcolor;
                 }
+            }
+            
             }
         }
     }

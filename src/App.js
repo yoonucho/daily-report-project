@@ -12,10 +12,8 @@ import "./assets/style.scss";
 import "./assets/reset.css";
 
 class App extends Component {
-	// Render : UNSAFE_componentWillMount()(v16.3 이후) -> render() -> componentDidMount()
-	// Update :UNSAFE_componentWillReceiveProps() (v16.3 이후) -> shouldComponentUpdate() == true -> getSnapshotBeforeUpdate()(v16.3 이후) -> render() -> componentDidMount()
-
-	// state = {};
+	/* Render : UNSAFE_componentWillMount()(v16.3 이후) -> render() -> componentDidMount()
+	 Update :UNSAFE_componentWillReceiveProps() (v16.3 이후) -> shouldComponentUpdate() == true -> getSnapshotBeforeUpdate()(v16.3 이후) -> render() -> componentDidMount()*/
 
 	render() {
 		return (

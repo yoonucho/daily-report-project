@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { MdAssignment } from "react-icons/md";
 import { MdSettings } from "react-icons/md";
 import { MdMood } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Nav extends Component {
 	render() {
@@ -13,34 +13,34 @@ class Nav extends Component {
 				<nav className="nav">
 					<ul className="nav-list">
 						<li>
-							<Link to="/today">
+							<NavLink to="/today" activeClassName="active">
 								<MdHome />
 								<span>오늘</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/calendar">
+							<NavLink to="/calendar">
 								<MdDateRange />
 								<span>달력</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/report">
+							<NavLink to="/report">
 								<MdAssignment />
 								<span>기록</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/setting">
+							<NavLink to="/setting">
 								<MdSettings />
 								<span>설정</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/about">
+							<NavLink to="/about">
 								<MdMood />
 								<span>소개</span>
-							</Link>
+							</NavLink>
 						</li>
 					</ul>
 				</nav>
