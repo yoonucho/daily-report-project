@@ -9,7 +9,7 @@ class Setting extends Component {
 						<h1>설정</h1>
 						<form>
 							<fieldset>
-								<label for="starttime">시작 시간</label>
+								<label htmlFor="starttime">시작 시간</label>
 								<select id="starttime">
 									<option value="06:00">06:00</option>
 									<option value="07:00">07:00</option>
@@ -20,7 +20,7 @@ class Setting extends Component {
 								</select>
 							</fieldset>
 							<fieldset>
-								<label for="lang">달력 언어</label>
+								<label htmlFor="lang">달력 언어</label>
 								<select id="lang">
 									<option value="ko">한국어</option>
 									<option value="en">영어</option>
