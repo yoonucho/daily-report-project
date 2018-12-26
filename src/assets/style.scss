@@ -163,6 +163,9 @@ $bg: #fff9db;
                     &.cancel {
                         background: $gray;
                     }
+                    &.delete {
+                        background: $keycolor;
+                    }
                 }
             }
         }
@@ -260,7 +263,7 @@ $bg: #fff9db;
             background: $lgray;
             color: #fff;
             &.save {
-                background: $keycolor;
+                background: $subcolor;
             }
             &.cancel {
                 background: $gray;
