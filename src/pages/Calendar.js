@@ -17,7 +17,7 @@ class Calendar extends Component {
 		//console.log("calendar");
 		return (
 			<Fragment>
-				<div className="example">
+				<div className="calendar--wrap">
 					<BigCalendar
 						localizer={localizer}
 						events={events}
