@@ -32,11 +32,12 @@ $bg: #fff9db;
                     font-size: 1rem;
                     padding: 5px 0 0 0;
                 }
-            }
-            &.active {
+				&.active {
                 * {
                     color: $subcolor;
                 }
+            }
+            
             }
         }
     }
@@ -162,6 +163,9 @@ $bg: #fff9db;
                     &.cancel {
                         background: $gray;
                     }
+                    &.delete {
+                        background: $keycolor;
+                    }
                 }
             }
         }
@@ -259,7 +263,7 @@ $bg: #fff9db;
             background: $lgray;
             color: #fff;
             &.save {
-                background: $keycolor;
+                background: $subcolor;
             }
             &.cancel {
                 background: $gray;

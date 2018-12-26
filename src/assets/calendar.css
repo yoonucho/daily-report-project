@@ -46,25 +46,24 @@ a:active {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-.example {
+.calendar--wrap {
 	font-size: 14px;
-	padding: 0 40px;
+	padding: 0 20px;
 	min-height: calc(100vh - 100px);
 	min-height: -webkit-max-content;
 	min-height: -moz-max-content;
 	min-height: max-content;
 	height: calc(100vh - 100px);
-	width: 100%;
 	margin: auto;
 }
-.example,
-.example > * {
+.calendar--wrap,
+.calendar--wrap > * {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
 	flex-direction: column;
 }
-.example .rbc-calendar {
+.calendar--wrap .rbc-calendar {
 	-ms-flex: 1 1;
 	flex: 1 1;
 	min-height: 580px;
