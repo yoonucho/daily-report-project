@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-// import {Moment} from "moment";
 
 class Intro extends Component {
 	render() {
