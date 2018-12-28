@@ -1,54 +1,39 @@
 import React, { Component, Fragment } from "react";
-import DayItem from "./DayItem";
-import DayScore from "./DayScore";
+import DayList from "../components/DayList";
+import DayScore from "../components/DayScore";
+
+const oneDay = new Array(25).fill(0).map((key, index) => ({ id: index, action: `${index}`, time: "2018-12-29" }));
 
 class Day extends Component {
 	state = {
-		list: [
-			{
-				id: "2018-12-27-01-02",
-				action: "",
-				score: undefined
-			},
-			{
-				id: "2018-12-27-01-02",
-				action: "",
-				score: undefined
-			},
-			{
-				id: "2018-12-27-02-03",
-				action: "",
-				score: undefined
-			},
+		list: oneDay
 
-			{
-				id: "2018-12 -27-03-04",
-				action: "",
-				score: undefined
-			},
-
-		],
-		action: ""
 	};
 
+	// 일정 데이터 안에 들어가는 id 값
+	id = 1;
+	getId = () => {
+		return ++this.id; // 현재 값에서 1을 더한 값을 반환
+	};
 
 	// 업데이트 될 때
-	handleUpdate = () => {
-		this.setState(({ list, action, id }) => ({
-			list: [
-				...list,
-				{
-					id,
-					action
-				}
-			],
-			action
+	// handleUpdate = () => {
+	// 	this.setState(({ list, action, id }) => ({
+	// 		list: [
+	// 			...list,
+	// 			{
+	// 				id,
+	// 				action
+	// 			}
+	// 		],
 
-		}));
+	// 	}));
 
-	}
+	// }
 	// 인풋 클릭했을때
-	handleChage = e => {
+	handleChange = e => {
+		// 페이지 리로딩 방지
+		e.preventDefault();
 		this.setState({
 			action: e.target.value
 		});
@@ -80,18 +65,29 @@ class Day extends Component {
 				<div className="day">
 					<h1 className="day-title">title</h1>
 					<ul className="day-list">
-						{this.state.list.map((item) => {
-							return (
-								<li className="day-list-item">
-									<DayItem key={item.id} action={item.action} />
-									<DayScore />
-									<div className="buttons">
-										<button type="submit" className="save"
-											onClick={this.handleSubmit}>저장</button>
-										<button className="cancel">취소</button>
-									</div>
-								</li>)
-						})};
+						<DayList list={this.state.list} onChange={this.state.handleChange} />
+						<DayScore />
+						{/* <li className="day-list-item">
+							<div className="time">
+								<h2>time</h2>
+							</div>
+							<form className="action">
+								<input
+									type="text"
+									value={this.state.action}
+									placeholder="내용을 작성해주세요."
+									onChange={this.handleChage}
+								/>
+							
+							
+								<div className="buttons">
+									<button type="submit" className="save"
+										onClick={this.handleSubmit}>저장
+									</button>
+									<button className="cancel">취소</button>
+								</div>
+							</form>
+						</li> */}
 					</ul>
 				</div>
 			</Fragment>
