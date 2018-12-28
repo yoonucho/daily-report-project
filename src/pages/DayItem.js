@@ -22,12 +22,12 @@ class DayItem extends Component {
 					<p>{this.props.action}</p>
 
 				</form>
-				<div className="buttons">
+				{/* <div className="buttons">
 					<button type="submit" className="save">
 						저장
 					</button>
 					<button className="delete">삭제</button>
-				</div>
+				</div> */}
 			</Fragment>
 
 		);

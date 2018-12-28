@@ -31,6 +31,22 @@ class Day extends Component {
 		action: ""
 	};
 
+
+	// 업데이트 될 때
+	handleUpdate = () => {
+		this.setState(({ list, action, id }) => ({
+			list: [
+				...list,
+				{
+					id,
+					action
+				}
+			],
+			action
+
+		}));
+
+	}
 	// 인풋 클릭했을때
 	handleChage = e => {
 		this.setState({
@@ -41,17 +57,20 @@ class Day extends Component {
 	// 저장버튼 눌렀을때
 	handleSubmit = e => {
 		// 페이지 리로딩 방지
-		e.preventDefault();
-		this.setState(({ list, action, id }) => ({
-			list: [
-				...list,
-				{
-					id,
-					action
-				}
-			],
+		console.log("handleSubmit")
+		// e.preventDefault();
+		// this.setState(({ list, action, id }) => ({
+		// 	list: [
+		// 		...list,
+		// 		{
+		// 			id,
+		// 			action
+		// 		}
+		// 	],
+		// 	action
 
-		}));
+		// }));
+
 	};
 
 	render() {
@@ -61,25 +80,22 @@ class Day extends Component {
 				<div className="day">
 					<h1 className="day-title">title</h1>
 					<ul className="day-list">
-
-						{this.state.list.map((list, key) => {
+						{this.state.list.map((item) => {
 							return (
 								<li className="day-list-item">
-									<DayItem id={list.id} key={key} action={list.action} />
+									<DayItem key={item.id} action={item.action} />
 									<DayScore />
 									<div className="buttons">
 										<button type="submit" className="save"
-											onClick={this.handleSubmit}>저장
-										</button>
+											onClick={this.handleSubmit}>저장</button>
 										<button className="cancel">취소</button>
 									</div>
-								</li>
-							)
-						})}
+								</li>)
+						})};
 					</ul>
 				</div>
 			</Fragment>
-		);
+		)
 	}
 }
 
