@@ -1,14 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 class DayItem extends Component {
 
-	// shouldComponentUpdate(nextProps, nextState) {
-	// 	return this.props.list !== nextProps.list;
-	// }
-
 	render() {
 		return (
-			<Fragment>
+			<li className="day-list-item" >
 				<div className="time">
 					<h2>{this.props.time}</h2>
 				</div>
@@ -24,7 +20,7 @@ class DayItem extends Component {
 					<div className="buttons">
 						<button type="submit" className="save"
 							onClick={this.props.handleSubmit}>저장
-									</button>
+						</button>
 						<button className="cancel">취소</button>
 					</div>
 				</form>
@@ -34,7 +30,7 @@ class DayItem extends Component {
 					</button>
 					<button className="delete">삭제</button>
 				</div> */}
-			</Fragment>
+			</li>
 
 		);
 	}

@@ -13,7 +13,7 @@ class Nav extends Component {
 				<nav className="nav">
 					<ul className="nav-list">
 						<li>
-							<NavLink to="/today" activeClassName="active">
+							<NavLink to="/today:date" activeClassName="active">
 								<MdHome />
 								<span>오늘</span>
 							</NavLink>

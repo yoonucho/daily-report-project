@@ -21,7 +21,7 @@ class App extends Component {
 				<Fragment>
 					<Nav />
 					<Route exact path="/" component={Intro} />
-					<Route path="/today" component={Day} />
+					<Route path="/today:date" component={Day} />
 					<Route path="/calendar" component={Calendar} />
 					<Route path="/report" component={Report} />
 					<Route path="/setting" component={Setting} />

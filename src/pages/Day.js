@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from "react";
+// import axios from 'axios';
+// import moment from 'moment';
 import DayList from "../components/DayList";
 import DayScore from "../components/DayScore";
 
-const oneDay = new Array(25).fill(0).map((key, index) => ({ id: index, action: `${index}`, time: "2018-12-29" }));
+
+const oneDay = new Array(25).fill(0).map((key, index) => ({ id: "", action: `${index}`, time: `${index}` }));
 
 class Day extends Component {
 	state = {
@@ -10,11 +13,7 @@ class Day extends Component {
 
 	};
 
-	// 일정 데이터 안에 들어가는 id 값
-	id = 1;
-	getId = () => {
-		return ++this.id; // 현재 값에서 1을 더한 값을 반환
-	};
+
 
 	// 업데이트 될 때
 	// handleUpdate = () => {
@@ -30,6 +29,16 @@ class Day extends Component {
 	// 	}));
 
 	// }
+
+	// componentDidMount() {
+	// 	axios.get('http://localhost:4000/today/')
+	// 		.then(response => {
+	// 			this.setState({ list: response.data });
+	// 		}).catch((error) => {
+	// 			console.log(error);
+	// 		});
+	// }
+
 	// 인풋 클릭했을때
 	handleChange = e => {
 		// 페이지 리로딩 방지
@@ -64,10 +73,9 @@ class Day extends Component {
 			<Fragment>
 				<div className="day">
 					<h1 className="day-title">title</h1>
-					<ul className="day-list">
-						<DayList list={this.state.list} onChange={this.state.handleChange} />
-						<DayScore />
-						{/* <li className="day-list-item">
+					<DayList list={this.state.list} onChange={this.state.handleChange} />
+					<DayScore />
+					{/* <li className="day-list-item">
 							<div className="time">
 								<h2>time</h2>
 							</div>
@@ -88,7 +96,6 @@ class Day extends Component {
 								</div>
 							</form>
 						</li> */}
-					</ul>
 				</div>
 			</Fragment>
 		)

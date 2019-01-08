@@ -10,15 +10,15 @@ class DayList extends Component {
 	render() {
 		const { list } = this.props;
 		const dayList = list.map(
-			time => (
-				<DayItem key={time.id} action={time.action}/>
+			item => (
+				<DayItem key={item.id} id={item.index} action={item.action} time={item.time} />
 			)
 		);
 
 		return (
-			<div>
+			<ul className="day-list">
 				{dayList}
-			</div>
+			</ul>
 		);
 	}
 }
