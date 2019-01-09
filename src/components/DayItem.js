@@ -14,7 +14,7 @@ class DayItem extends Component {
 						type="text"
 						defaultValue={this.props.action}
 						placeholder="내용을 작성해주세요."
-						onChange={this.props.handleChage}
+						onChange={this.props.handleChange}
 					/>
 
 					<div className="buttons">
