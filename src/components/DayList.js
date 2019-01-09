@@ -10,8 +10,8 @@ class DayList extends Component {
 	render() {
 		const { list } = this.props;
 		const dayList = list.map(
-			item => (
-				<DayItem key={item.id} id={item.index} action={item.action} time={item.time} />
+			(item, index) => (
+				<DayItem key={index} id={item.id} action={item.action} time={item.time} />
 			)
 		);
 
