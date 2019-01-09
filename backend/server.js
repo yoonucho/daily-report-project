@@ -33,9 +33,7 @@ todayRoutes.route('/').get(function (req, res) {
 })
 
 todayRoutes.route('/today/:date').get(function (req, res) {
-	let date = new Date()
-	// console.log(date.toDateString())
-
+	console.log(req.params.date);
 })
 
 app.use("/today", todayRoutes);
