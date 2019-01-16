@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let Today = new Schema({
 	today_time: {
-		type: Date
+		type: String
 	},
 	today_action: {
 		type: String
