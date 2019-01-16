@@ -5,7 +5,7 @@ import DayList from "../components/DayList";
 import DayScore from "../components/DayScore";
 
 
-const oneDay = new Array(25).fill(0).map((key, index) => ({ id: "", action: `${index}`, time: `${index}` }));
+const oneDay = new Array(25).fill(0).map((key, index) => ({ id: index, action: `test${index}`, time: `${index}` }));
 
 class Day extends Component {
 	state = {
