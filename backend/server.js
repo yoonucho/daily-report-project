@@ -53,4 +53,5 @@ todayRoutes.get("/", (req, res) => {
 // 	console.log("Server is running on Port :" + PORT);
 // })
 
-module.exports = todayRoutes;
+module.exports = express
+

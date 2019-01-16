@@ -1,34 +1,24 @@
-const request = require("supertest");
-const server = require("./server");
-const express = require("express");
-const cors = require("cors");
-// const mongoose = require("mongoose");
-// const todayRoutes = express.Router();
-const PORT = 4000;
-const app = express();
+const supertest = require('supertest');
+const server = require('./server');
+const mongoose = require('mongoose');
 
-describe("server~", () => {
-	app.use(cors());
-	app.use(express.json());
-	test("test test", () => {
-		// request(app)
-		// 	.get("/")
-		// 	.expect(200);
-		// .end((err, res) => {
-		// 	if (err) throw err;
-		// });
-		request(app)
-			.get("/")
-			.send("hello world!")
-			.expect(200);
-	});
-	test("oh no..", done => {
-		request(app).expect(404, done);
+//console.log(server);
+
+describe('server', () => {
+	it('test', () => {
+		// request(todayRoutes).get('/').then((response) => {
+		// 	expect(response.statusCode).toBe(200);
+		// 	done();
+		// })
+		return supertest(server).get('/').expect(200);
 	});
 
-	// beforeAll(() => {
-	// 	mongoose.connect("mongodb://127.0.0.1:27017/today");
-	// });
+	beforeAll(() => {
+		mongoose.connect(
+			'mongodb://127.0.0.1:27017/today'
+
+		);
+
 	// afterAll(done => {
 	// 	mongoose.disconnect(done);
 	// });
