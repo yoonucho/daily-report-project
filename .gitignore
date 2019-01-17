@@ -1,0 +1,12 @@
+backend/node_modules/
+node_modules/
+yarn.lock
+src/events.js
+src/MyName.js
+src/Counter.js
+package-lock.json
+doc/데일리리포트앱.txt
+doc/1222공부계획.txt
+backend/yarn.lock
+181218.txt
+.vscode/settings.json
