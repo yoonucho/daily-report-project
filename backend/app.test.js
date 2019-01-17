@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("./app");
 
 describe("Test the root path", () => {
-	test("It should response the Get method", done => {
+	it("It should response the Get method", done => {
 		request(app)
 			.get("/")
 			.then(response => {
