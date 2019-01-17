@@ -6,6 +6,9 @@
 	"scripts": {
 		"test": "jest --detectOpenHandles"
 	},
+	"jest": {
+		"testEnvironment": "node"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
