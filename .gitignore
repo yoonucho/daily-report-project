@@ -22,3 +22,12 @@ chrome-user-data
 .vscode
 *.swp
 *.swo
+yarn.lock
+src/events.js
+src/MyName.js
+src/Counter.js
+package-lock.json
+doc/데일리리포트앱.txt
+backend/yarn.lock
+181218.txt
+doc/1222공부계획.txt
