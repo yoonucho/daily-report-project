@@ -1,20 +1,16 @@
 const request = require("supertest");
-const server = require("./server");
+const app = require("./server");
 // const mongoose = require("mongoose");
-
-console.dir(server);
+// const server = request.agent("http://localhost:4000");
+// console.dir(server);
 
 describe("Test the root path", () => {
-	test("It should response the Get method", () => {
-		// request(server)
-		// 	.get("/")
-		// 	.then(response => {
-		// 		expect(response.statusCode).toBe(200);
-		// 		done();
-		// 	});
-		return request(server)
+	test("Response the Get method", done => {
+		request(app)
 			.get("/")
+			.expect("Content-type", /json/)
 			.expect(200);
+		done();
 	});
 
 	// beforeAll(() => {
