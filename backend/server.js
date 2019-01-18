@@ -45,6 +45,7 @@ todayRoutes.get("/", (req, res) => {
 
 // app.use("/today:date", todayRoutes);
 
+// mongoose test환경시 실행안되는 코드
 if (process.env.NODE_ENV !== "test") {
 	app.listen(PORT);
 	console.log("Server is running on Port :" + PORT);

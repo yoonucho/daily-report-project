@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("./server");
+const app = require("../server");
 const mongoose = require("mongoose");
 // console.log(app);
 
@@ -12,11 +12,15 @@ describe("Test the root path", () => {
 		done();
 	});
 
-	beforeAll(() => {
-		mongoose.connect("mongodb://127.0.0.1:27017/today");
-	});
+	describe("Mongoose connect", () => {
+		test("MongDB database connection success!!!", () => {
+			beforeAll(() => {
+				mongoose.connect("mongodb://127.0.0.1:27017/today");
+			});
 
-	afterAll(done => {
-		mongoose.disconnect(done);
+			afterAll(done => {
+				mongoose.disconnect(done);
+			});
+		});
 	});
 });
