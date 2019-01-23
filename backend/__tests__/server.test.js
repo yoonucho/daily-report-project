@@ -1,6 +1,7 @@
 const request = require("supertest");
 const app = require("../server");
 const mongoose = require("mongoose");
+// const Today = require("./today.model");
 // console.log(app);
 
 describe("Test the root path", () => {
@@ -13,14 +14,18 @@ describe("Test the root path", () => {
 	});
 
 	describe("Mongoose connect", () => {
-		test("MongDB database connection success!!!", () => {
-			beforeAll(() => {
-				mongoose.connect("mongodb://127.0.0.1:27017/today");
-			});
+		beforeAll(() => {
+			mongoose.connect("mongodb://127.0.0.1:27017/today");
+			console.log("MogoDB database connection yoonu successfully!");
+		});
+		test("Find data from test database", () => {
+			// request(app)
+			// 	// .find()
+			// 	.exec(500);
+		});
 
-			afterAll(done => {
-				mongoose.disconnect(done);
-			});
+		afterAll(done => {
+			mongoose.disconnect(done);
 		});
 	});
 });
