@@ -18,6 +18,7 @@ describe('server', () => {
 			'mongodb://127.0.0.1:27017/today'
 
 		);
+<<<<<<< HEAD
 	});
 	afterAll((done) => {
 		mongoose.disconnect(done);
@@ -28,3 +29,10 @@ describe('server', () => {
 })
 
 
+=======
+
+	// afterAll(done => {
+	// 	mongoose.disconnect(done);
+	// });
+});
+>>>>>>> 2b0b5aa9d83dbf489f5358a5a8a60c50644e16a5
