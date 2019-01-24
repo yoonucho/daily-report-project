@@ -4,6 +4,8 @@
 	"private": true,
 	"dependencies": {
 		"axios": "^0.18.0",
+		"eslint-config-prettier": "^3.6.0",
+		"global": "^4.3.2",
 		"moment": "^2.23.0",
 		"node-sass": "^4.11.0",
 		"react": "^16.7.0",
@@ -32,5 +34,12 @@
 	"main": "index.js",
 	"repository": "https://github.com/yoonucho/daily-report-project.git",
 	"author": "yoonucho <yoonu78@naver.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^5.12.1",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-jsx-a11y": "^6.1.2",
+		"eslint-plugin-react": "^7.12.4"
+	}
 }
