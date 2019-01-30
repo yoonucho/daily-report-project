@@ -38,14 +38,14 @@ todayRoutes.get("/", (req, res) => {
 	}).select({ _id: 0 });
 });
 
-// todayRoutes.get("/today/:date", (req, res) => {
-// 	const date = req.params.date;
-// 	Today.findById(date, (err, today) => {
-// 		res.json(today);
-// 	});
-// });
+todayRoutes.get("/today/:date", (req, res) => {
+	const date = req.params.date;
+	Today.findOne(date, (err, today) => {
+		res.json(today);
+	});
+});
 
-todayRoutes.put("/", (req, res) => {
+todayRoutes.put("/today/:date", (req, res) => {
 	let today = new Today(req.body);
 	today
 		.save()
@@ -57,7 +57,7 @@ todayRoutes.put("/", (req, res) => {
 		});
 });
 
-// app.use("/today/:date", todayRoutes);
+app.use("/today/:date", todayRoutes);
 
 // mongoose test환경시 실행안되는 코드
 if (process.env.NODE_ENV !== "test") {
