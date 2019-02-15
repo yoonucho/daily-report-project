@@ -29,19 +29,20 @@ describe("Test the root path", () => {
 		done();
 	});
 
-	// error
-	// test("Response the Put method for  /today/:date", done => {
-	// 	request(app)
-	// 		.put("/today/:date")
-	// 		.send(Today)
-	// 		.expect("Content-type", /json/)
-	// 		.expect(200);
-	// 	const date = req.params.date;
-	// 	Today.findOne(date, (err, today) => {
-	// 		res.json(today);
-	// 	});
-	// 	done();
-	// });
+	test("Response the Put method for  /today/:date", done => {
+		request(app)
+			.put("/today/:date")
+			.send(Today)
+			.expect("Content-type", /json/)
+			.expect(200);
+		// const date = req.params.date;
+		let today = new Today({today_time: "2019-02-11"});
+		Today.findOne(today, (err, today) => {
+			res.json(today);
+			console.log(today);
+		});
+		done();
+	});
 
 	describe("Mongoose connect", () => {
 		beforeAll(() => {

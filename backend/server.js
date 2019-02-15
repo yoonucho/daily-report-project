@@ -19,7 +19,7 @@ mongoose.set({ useNewUrlParser: true }, { useCreateIndex: true });
 
 const connection = mongoose.connection;
 
-connection.once("open", function() {
+connection.once("open", function () {
 	console.log("MogoDB database connection yoonu successfully!");
 });
 
@@ -45,12 +45,26 @@ todayRoutes.get("/today/:date", (req, res) => {
 	});
 });
 
+// todayRoutes.put("/today/:date", (req, res) => {
+// 	let today = new Today(req.body);
+// 	today
+// 		.save()
+// 		.then(today => {
+// 			res.status(200).send({ today: "today put successfully!" });
+// 		})
+// 		.catch(err => {
+// 			res.status(400).send("put new today failed!");
+// 		});
+// });
+
 todayRoutes.put("/today/:date", (req, res) => {
 	let today = new Today(req.body);
-	today
-		.save()
+	today.save()
 		.then(today => {
-			res.status(200).send({ today: "today put successfully!" });
+			Today.findOne(today => {
+				// res.json(today);
+				res.status(200).send({ today: "today put successfully!" })
+			});
 		})
 		.catch(err => {
 			res.status(400).send("put new today failed!");
