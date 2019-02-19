@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 // import moment from 'moment';
 import DayList from "../components/DayList";
 import DayScore from "../components/DayScore";
@@ -30,14 +30,15 @@ class Day extends Component {
 
 	// }
 
-	// componentDidMount() {
-	// 	axios.get('http://localhost:4000/today/')
-	// 		.then(response => {
-	// 			this.setState({ list: response.data });
-	// 		}).catch((error) => {
-	// 			console.log(error);
-	// 		});
-	// }
+	async componentDidMount() {
+		try {
+			const response = await axios.get('http://localhost:4000/today/2019-02-11');
+			this.setState({ list: response.data });
+		} catch (error) {
+			console.log(error);
+		}
+
+	}
 
 	// 인풋 클릭했을때
 	handleChange = e => {
@@ -51,6 +52,7 @@ class Day extends Component {
 	// 저장버튼 눌렀을때
 	handleSubmit = e => {
 		// 페이지 리로딩 방지
+		e.preventDefault();
 		console.log("handleSubmit")
 		// e.preventDefault();
 		// this.setState(({ list, action, id }) => ({
@@ -73,7 +75,7 @@ class Day extends Component {
 			<Fragment>
 				<div className="day">
 					<h1 className="day-title">title</h1>
-					<DayList list={this.state.list} onChange={this.state.handleChange} />
+					<DayList list={this.state.list} onChange={this.handleChange} />
 					<DayScore />
 					{/* <li className="day-list-item">
 							<div className="time">
