@@ -43,7 +43,7 @@ const Day = () => {
 	handleChange = e => {
 		// 페이지 리로딩 방지
 		e.preventDefault();
-		this.setState({
+		setList({
 			action: e.target.value
 		});
 	};
@@ -74,7 +74,7 @@ const Day = () => {
 			<Fragment>
 				<div className="day">
 					<h1 className="day-title">title</h1>
-					<DayList list={this.state.list} onChange={this.handleChange} />
+					<DayList list={list} onChange={this.handleChange} />
 					<DayScore />
 					{/* <li className="day-list-item">
 							<div className="time">
