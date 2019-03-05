@@ -11,14 +11,17 @@ const Day = () => {
 	const [list, setList] = useState({ oneday })
 
 	//componentDidMount(), componentDidUpdate()와 비슷
+	
 	useEffect(() => {
-		try {
-			const response = await axios.get('http://localhost:4000/today/2019-02-11');
-			list({ list: response.data });
-		} catch (error) {
-			console.log(error);
-		}
-	});
+		(async function () {
+			try {
+				const response = await axios.get('http://localhost:4000/today/2019-02-11');
+				list({ list: response.data });
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	},[]);
 
 	// 업데이트 될 때
 	// handleUpdate = () => {
@@ -49,24 +52,24 @@ const Day = () => {
 	};
 
 	// 저장버튼 눌렀을때
-	handleSubmit = e => {
-		// 페이지 리로딩 방지
-		e.preventDefault();
-		console.log("handleSubmit")
-		// e.preventDefault();
-		// this.setState(({ list, action, id }) => ({
-		// 	list: [
-		// 		...list,
-		// 		{
-		// 			id,
-		// 			action
-		// 		}
-		// 	],
-		// 	action
+	// handleSubmit = e => {
+	// 	// 페이지 리로딩 방지
+	// 	e.preventDefault();
+	// 	console.log("handleSubmit")
+	// 	// e.preventDefault();
+	// 	// this.setState(({ list, action, id }) => ({
+	// 	// 	list: [
+	// 	// 		...list,
+	// 	// 		{
+	// 	// 			id,
+	// 	// 			action
+	// 	// 		}
+	// 	// 	],
+	// 	// 	action
 
-		// }));
+	// 	// }));
 
-	};
+	// }
 
 	render() {
 		console.log("today");
