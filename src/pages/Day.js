@@ -12,12 +12,15 @@ const Day = () => {
 
 	//componentDidMount(), componentDidUpdate()와 비슷
 	useEffect(() => {
-		try {
-			const response = await axios.get('http://localhost:4000/today/2019-02-11');
-			list({ list: response.data });
-		} catch (error) {
-			console.log(error);
-		}
+		(async () => {
+			try {
+				const response = await axios.get('http://localhost:4000/today/2019-02-11');
+				list({ list: response.data });
+			} catch (error) {
+				console.log(error);
+			}
+		})
+
 	});
 
 	// 업데이트 될 때
