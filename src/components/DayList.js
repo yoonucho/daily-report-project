@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import DayItem from "./DayItem"
+import React from "react";
+import DayItem from "./DayItem";
 
-class DayList extends Component {
+const DayList = props => {
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	return this.props.list !== nextProps.list;
+	// }
 
-	shouldComponentUpdate(nextProps, nextState) {
-		return this.props.list !== nextProps.list;
-	}
+	const { list } = props;
+	const dayList = list.map((item, index) => (
+		<DayItem
+			key={index}
+			id={item.id}
+			action={item.action}
+			time={item.time}
+		/>
+	));
 
-	render() {
-		const { list } = this.props;
-		const dayList = list.map(
-			(item, index) => (
-				<DayItem key={index} id={item.id} action={item.action} time={item.time} />
-			)
-		);
+	return <ul className="day-list">{dayList}</ul>;
+};
 
-		return (
-			<ul className="day-list">
-				{dayList}
-			</ul>
-		);
-	}
-}
+const areEqual = (prevProps, nextProps) => {
+	return this.props.list !== nextProps.list;
+};
 
-export default DayList;
+export default React.memo(DayList, areEqual);
