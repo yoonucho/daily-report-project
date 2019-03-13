@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
 const DayItem = props => {
 	return (
 		<li className="day-list-item">
 			<div className="time">
-				<h2>{time}</h2>
+				<h2>{props.time}</h2>
 			</div>
-			<p>{action}</p>
+			<p>{props.action}</p>
 			<form className="action">
 				<input
 					type="text"
-					defaultValue={action}
+					defaultValue={props.action}
 					placeholder="내용을 작성해주세요."
-					onChange={handleChange}
+					onChange={props.handleChange}
 				/>
 
 				<div className="buttons">
 					<button
 						type="submit"
 						className="save"
-						onClick={handleSubmit}
+						onClick={props.handleSubmit}
 					>
 						저장
 					</button>
