@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DayItem = props => {
+	const [action, setAction] = useState("");
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		alert(`${action}${props.action}`);
+		setAction("");
+	};
+
 	return (
 		<li className="day-list-item">
 			<div className="time">
 				<h2>{props.time}</h2>
 			</div>
 			<p>{props.action}</p>
-			<form className="action">
+			<form className="action" onSubmit={handleSubmit}>
 				<input
 					type="text"
 					defaultValue={props.action}
@@ -16,11 +24,7 @@ const DayItem = props => {
 				/>
 
 				<div className="buttons">
-					<button
-						type="submit"
-						className="save"
-						onClick={props.handleSubmit}
-					>
+					<button type="submit" className="save">
 						저장
 					</button>
 					<button className="cancel">취소</button>
