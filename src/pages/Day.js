@@ -13,6 +13,10 @@ const Day = () => {
 
 	const [list, setList] = useState(oneDay);
 
+const Day = () => {
+
+	const [list, setList] = useState({ oneday })
+
 	console.log(typeof oneDay);
 	// state = {
 	// 	list: oneDay
